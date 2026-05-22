@@ -12,7 +12,9 @@ const loginUrl = "https://app.uanggue.my.id/login";
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
         <div class="flex-shrink-0 flex items-center gap-2 group cursor-default">
-          <div class="w-8 h-8 bg-brand-600 rounded-lg flex items-center justify-center text-white font-bold transition-transform group-hover:rotate-12">U</div>
+          <div class="w-8 h-8 rounded-lg overflow-hidden">
+            <img src="/logo.webp" alt="UangGue Logo" class="w-full h-full object-cover" />
+          </div>
           <span class="text-xl font-extrabold text-slate-900 tracking-tight">Uang<span class="text-brand-600">Gue</span></span>
         </div>
         <div>
@@ -161,7 +163,7 @@ const loginUrl = "https://app.uanggue.my.id/login";
 
   <footer class="bg-white py-12 border-t border-slate-100">
     <div class="max-w-7xl mx-auto px-4 text-center text-slate-400 text-sm font-medium">
-      &copy; {new Date().getFullYear()} UangGue. Digital Craftsmanship for Personal Finance.
+      &copy; {new Date().getFullYear()} UangGue.
     </div>
   </footer>
 </Layout>
