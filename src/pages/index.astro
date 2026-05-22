@@ -1,11 +1,167 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const loginUrl = "https://app.uanggue.my.id/login";
 ---
 
-<Layout>
-	<Welcome />
+<Layout 
+  title="UangGue - Smart Personal Financial Management" 
+  description="Kelola keuangan pribadi dengan cerdas. Dilengkapi Smart Dashboard, integrasi Google OAuth, dan fitur penginputan cepat bergaya Excel."
+>
+  <header class="fixed top-0 inset-x-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex-shrink-0 flex items-center gap-2 group cursor-default">
+          <div class="w-8 h-8 bg-brand-600 rounded-lg flex items-center justify-center text-white font-bold transition-transform group-hover:rotate-12">U</div>
+          <span class="text-xl font-extrabold text-slate-900 tracking-tight">Uang<span class="text-brand-600">Gue</span></span>
+        </div>
+        <div>
+          <a href={loginUrl} class="bg-brand-600 hover:bg-brand-700 hover:scale-[1.05] active:scale-[0.95] text-white px-5 py-2.5 rounded-xl font-bold text-sm transition-all shadow-lg shadow-brand-600/20">
+            Masuk ke Aplikasi
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow pt-16 overflow-hidden bg-slate-50">
+    
+    <section class="relative pt-20 pb-32 lg:pt-32 lg:pb-52 overflow-hidden">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 overflow-hidden pointer-events-none">
+        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[60%] bg-emerald-100/40 blur-[120px] rounded-full"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[60%] bg-indigo-100/40 blur-[120px] rounded-full"></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-4xl mx-auto mb-20">
+          <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 mb-8 opacity-0 animate-hero-fade">
+            Manajemen Keuangan <br/>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-emerald-500">Tanpa Kerumitan</span>
+          </h1>
+          <p class="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed max-w-2xl mx-auto opacity-0 animate-hero-fade animation-delay-200">
+            Catat pengeluaran secepat mengetik di Excel. Pantau saldo secara real-time di semua perangkat. 100% Gratis selamanya.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center opacity-0 animate-hero-fade animation-delay-400">
+            <a href={loginUrl} class="bg-brand-600 hover:bg-brand-700 hover:shadow-2xl hover:scale-105 text-white text-lg px-10 py-4 rounded-2xl font-bold transition-all flex items-center justify-center gap-2">
+              Mulai Sekarang <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 opacity-0 animate-hero-fade animation-delay-400">
+          
+          <div class="relative z-10 bg-slate-800 rounded-2xl p-2 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.3)] border border-slate-700/50 overflow-hidden md:transform md:rotate-[-1deg] max-w-[90%] md:max-w-full">
+            <div class="bg-slate-900 rounded-xl overflow-hidden border border-slate-800 relative w-full" style="aspect-ratio: 16/10;">
+              <img 
+                src="/dashboard-desktop.png" 
+                alt="Dashboard Desktop UangGue" 
+                class="absolute inset-0 w-full h-full object-cover object-top block"
+              />
+            </div>
+          </div>
+
+          <div class="absolute bottom-[-40px] right-[0px] md:right-[-20px] lg:right-[-40px] z-20 w-[140px] sm:w-[200px] lg:w-[240px] bg-slate-900 rounded-[2rem] sm:rounded-[2.5rem] p-2 sm:p-3 shadow-[0_40px_80px_-15px_rgba(0,0,0,0.5)] border border-slate-700/80 animate-float-1">
+            <div class="bg-slate-800 rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden border border-slate-900 relative w-full" style="aspect-ratio: 9/19;">
+              <img 
+                src="/dashboard-mobile.png" 
+                alt="Mobile View UangGue" 
+                class="absolute inset-0 w-full h-full object-cover object-top block"
+              />
+            </div>
+            <div class="absolute top-4 sm:top-5 left-1/2 -translate-x-1/2 w-12 sm:w-16 h-1 sm:h-1.5 bg-slate-800 rounded-full hidden sm:block"></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="py-32 bg-white relative border-t border-slate-100">
+       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-20 scroll-reveal">
+          <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-4 uppercase tracking-tighter">Fitur Utama</h2>
+          <div class="w-20 h-1.5 bg-brand-600 mx-auto rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {[
+            { title: "Google OAuth", desc: "Login aman tanpa password dalam satu klik.", icon: "M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" },
+            { title: "Smart Analysis", desc: "Dashboard mutasi otomatis yang informatif.", icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2" },
+            { title: "Excel Style", desc: "Klik langsung pada sel tabel untuk edit data.", icon: "M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5" },
+            { title: "Audit Log", desc: "Riwayat perubahan data tercatat transparan.", icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04" }
+          ].map(item => (
+            <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-brand-500/30 transition-all hover:shadow-xl hover:-translate-y-2 group scroll-reveal">
+              <div class="w-12 h-12 bg-white shadow-sm rounded-2xl flex items-center justify-center mb-6 text-brand-600 group-hover:bg-brand-600 group-hover:text-white transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={item.icon}></path></svg>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 mb-3">{item.title}</h3>
+              <p class="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="py-32 bg-slate-50 border-t border-slate-100">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 scroll-reveal">
+          <h2 class="text-3xl font-bold text-slate-900 mb-4 tracking-tight italic">Pahami UangGue dalam 1 Menit</h2>
+          <p class="text-slate-500">Tutorial singkat mengoptimalkan penggunaan aplikasi.</p>
+        </div>
+
+        <div class="space-y-4 max-w-3xl mx-auto">
+          <details class="group bg-white rounded-2xl border border-slate-200 overflow-hidden scroll-reveal" open>
+            <summary class="flex justify-between items-center font-bold text-slate-900 p-6 cursor-pointer list-none select-none">
+              <span>Bagaimana cara mencatat transaksi dengan cepat?</span>
+              <span class="transition-transform group-open:rotate-180 text-slate-500">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </span>
+            </summary>
+            <div class="px-6 pb-6 text-slate-600 text-sm leading-relaxed border-t border-slate-50 pt-4">
+              UangGue menggunakan fitur <strong>Inline Cell Editing</strong>. Di desktop, cukup klik pada teks yang ingin diubah (seperti jumlah atau deskripsi), ketik perubahan Anda, dan tekan Enter. Data tersimpan seketika tanpa perlu membuka form pop-up yang mengganggu.
+            </div>
+          </details>
+
+          <details class="group bg-white rounded-2xl border border-slate-200 overflow-hidden scroll-reveal">
+            <summary class="flex justify-between items-center font-bold text-slate-900 p-6 cursor-pointer list-none select-none">
+              <span>Optimasi Desktop vs Mobile View?</span>
+              <span class="transition-transform group-open:rotate-180 text-slate-500">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </span>
+            </summary>
+            <div class="px-6 pb-6 text-slate-600 text-sm leading-relaxed border-t border-slate-50 pt-4">
+              Aplikasi ini 100% responsif. Gunakan <strong>Mobile View</strong> untuk mencatat pengeluaran harian secara cepat saat di jalan. Untuk analisis mendalam, pengaturan kategori, dan rekap bulanan yang lebih leluasa, kami menyarankan <strong>Desktop View</strong> agar Anda bisa melihat tabel data secara penuh.
+            </div>
+          </details>
+
+          <details class="group bg-white rounded-2xl border border-slate-200 overflow-hidden scroll-reveal">
+            <summary class="flex justify-between items-center font-bold text-slate-900 p-6 cursor-pointer list-none select-none">
+              <span>Transparansi Riwayat (Audit Log)?</span>
+              <span class="transition-transform group-open:rotate-180 text-slate-500">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </span>
+            </summary>
+            <div class="px-6 pb-6 text-slate-600 text-sm leading-relaxed border-t border-slate-50 pt-4">
+              Setiap kali Anda menambah, mengubah, atau menghapus transaksi, sistem akan mencatatnya di <strong>Activity Audit Log</strong>. Ini memastikan Anda memiliki kontrol penuh dan bisa melacak kapan serta apa yang berubah pada saldo keuangan Anda.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-brand-600 text-center relative overflow-hidden">
+      <div class="max-w-2xl mx-auto px-4 relative z-10 scroll-reveal">
+        <h2 class="text-4xl font-extrabold text-white mb-6 tracking-tight">Siap Untuk Finansial Yang Lebih Rapi?</h2>
+        <a href={loginUrl} class="inline-block bg-white text-brand-600 px-10 py-4 rounded-2xl font-bold text-lg shadow-2xl hover:scale-105 active:scale-95 transition-all">
+          Daftar Sekarang - 100% Gratis
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-white py-12 border-t border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 text-center text-slate-400 text-sm font-medium">
+      &copy; {new Date().getFullYear()} UangGue. Digital Craftsmanship for Personal Finance.
+    </div>
+  </footer>
 </Layout>
